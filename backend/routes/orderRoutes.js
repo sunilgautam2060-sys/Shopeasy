@@ -3,10 +3,6 @@ const router = express.Router();
 const Order = require('../models/Order');
 const { protect } = require('../middleware/authMiddleware');
 
-// ===========================
-// PLACE ORDER — POST /api/orders
-// Only logged-in users can place orders (protect middleware)
-// ===========================
 router.post('/', protect, async (req, res) => {
     try {
         const { items, totalAmount } = req.body;
@@ -24,10 +20,6 @@ router.post('/', protect, async (req, res) => {
     }
 });
 
-// ===========================
-// GET MY ORDERS — GET /api/orders/myorders
-// Returns all orders for the logged-in user
-// ===========================
 router.get('/myorders', protect, async (req, res) => {
     try {
         const orders = await Order.find({ user: req.user.id });

@@ -3,41 +3,13 @@ const router = express.Router();
 const Product = require('../models/Product');
 
 // ===========================
-// GET ALL PRODUCTS — GET /api/products
-// Frontend calls this to show products on the page
-// ===========================
-router.get('/', async (req, res) => {
-    try {
-        const products = await Product.find(); // Get all products from DB
-        res.json(products);
-    } catch (error) {
-        res.status(500).json({ message: 'Server error', error: error.message });
-    }
-});
-
-// ===========================
-// GET SINGLE PRODUCT — GET /api/products/:id
-// ===========================
-router.get('/:id', async (req, res) => {
-    try {
-        const product = await Product.findById(req.params.id);
-        if (!product) {
-            return res.status(404).json({ message: 'Product not found' });
-        }
-        res.json(product);
-    } catch (error) {
-        res.status(500).json({ message: 'Server error', error: error.message });
-    }
-});
-
-// ===========================
-// SEED PRODUCTS — POST /api/products/seed
-// This adds sample products to the database
-// Run this once to populate your store
+// SEED ROUTE MUST BE FIRST
+// Before the /:id route
+// Otherwise Express thinks "seed" is an ID
 // ===========================
 router.post('/seed', async (req, res) => {
     try {
-        await Product.deleteMany(); // Clear existing products
+        await Product.deleteMany();
 
         const products = [
             { name: 'Wireless Headphones', description: 'High quality sound, 20hr battery', price: 49.99, category: 'Electronics' },
@@ -51,6 +23,29 @@ router.post('/seed', async (req, res) => {
         await Product.insertMany(products);
         res.json({ message: 'Products seeded successfully' });
 
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
+
+// GET ALL PRODUCTS
+router.get('/', async (req, res) => {
+    try {
+        const products = await Product.find();
+        res.json(products);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
+
+// GET SINGLE PRODUCT — this must come AFTER /seed
+router.get('/:id', async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        if (!product) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+        res.json(product);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
