@@ -12,12 +12,48 @@ router.post('/seed', async (req, res) => {
         await Product.deleteMany();
 
         const products = [
-            { name: 'Wireless Headphones', description: 'High quality sound, 20hr battery', price: 49.99, category: 'Electronics' },
-            { name: 'Smart Watch', description: 'Tracks fitness, sleep and more', price: 89.99, category: 'Electronics' },
-            { name: 'Running Shoes', description: 'Lightweight, perfect for daily runs', price: 65.00, category: 'Footwear' },
-            { name: 'Backpack', description: 'Fits laptop up to 15 inches', price: 35.00, category: 'Bags' },
-            { name: 'Sunglasses', description: 'UV400 protection, stylish frame', price: 25.00, category: 'Accessories' },
-            { name: 'Water Bottle', description: 'Keeps drinks cold for 24 hours', price: 18.00, category: 'Accessories' },
+            {
+                name: 'Wireless Headphones',
+                description: 'High quality sound, 20hr battery',
+                price: 49.99,
+                category: 'Electronics',
+                image: 'images/headphones.jpg'
+            },
+            {
+                name: 'Smart Watch',
+                description: 'Tracks fitness, sleep and more',
+                price: 89.99,
+                category: 'Electronics',
+                image: 'images/watch.jpg'
+            },
+            {
+                name: 'Running Shoes',
+                description: 'Lightweight, perfect for daily runs',
+                price: 65.00,
+                category: 'Footwear',
+                image: 'images/shoes.jpg'
+            },
+            {
+                name: 'Backpack',
+                description: 'Fits laptop up to 15 inches',
+                price: 35.00,
+                category: 'Bags',
+                image: 'images/backpack.jpg'
+            },
+            {
+                name: 'Sunglasses',
+                description: 'UV400 protection, stylish frame',
+                price: 25.00,
+                category: 'Accessories',
+                image: 'images/sunglasses.jpg'
+            },
+            {
+                name: 'Water Bottle',
+                description: 'Keeps drinks cold for 24 hours',
+                price: 18.00,
+                category: 'Accessories',
+                image: 'images/bottle.jpg'
+            },
         ];
 
         await Product.insertMany(products);
