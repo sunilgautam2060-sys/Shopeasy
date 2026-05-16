@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ShopEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">🛒 ShopEasy</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h2 class="section-title">All Products</h2>
+
+        <!-- Search bar — lets user filter products -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search products..." oninput="searchProducts()">
+        </div>
+
+        <div class="products-grid" id="all-products">
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p class="description">High quality sound, 20hr battery</p>
+                <p class="price">$49.99</p>
+                <button class="btn-add" onclick="addToCart('Wireless Headphones', 49.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Watch">
+                <h3>Smart Watch</h3>
+                <p class="description">Tracks fitness, sleep and more</p>
+                <p class="price">$89.99</p>
+                <button class="btn-add" onclick="addToCart('Smart Watch', 89.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Shoes">
+                <h3>Running Shoes</h3>
+                <p class="description">Lightweight, perfect for daily runs</p>
+                <p class="price">$65.00</p>
+                <button class="btn-add" onclick="addToCart('Running Shoes', 65.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Backpack">
+                <h3>Backpack</h3>
+                <p class="description">Fits laptop up to 15 inches</p>
+                <p class="price">$35.00</p>
+                <button class="btn-add" onclick="addToCart('Backpack', 35.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Sunglasses">
+                <h3>Sunglasses</h3>
+                <p class="description">UV400 protection, stylish frame</p>
+                <p class="price">$25.00</p>
+                <button class="btn-add" onclick="addToCart('Sunglasses', 25.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Bottle">
+                <h3>Water Bottle</h3>
+                <p class="description">Keeps drinks cold for 24 hours</p>
+                <p class="price">$18.00</p>
+                <button class="btn-add" onclick="addToCart('Water Bottle', 18.00)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

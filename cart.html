@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - ShopEasy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">🛒 ShopEasy</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h2 class="section-title">Your Cart</h2>
+
+        <!-- Cart items will be shown here by JavaScript -->
+        <div id="cart-items">
+            <p id="empty-cart-msg">Your cart is empty. <a href="products.html">Start shopping!</a></p>
+        </div>
+
+        <!-- Total section — hidden until cart has items -->
+        <div id="cart-total" style="display:none;">
+            <hr>
+            <h3>Total: $<span id="total-amount">0.00</span></h3>
+            <button class="btn-primary" onclick="checkout()">Proceed to Checkout</button>
+            <button class="btn-secondary" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

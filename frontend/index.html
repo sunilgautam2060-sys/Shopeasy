@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- This tells the browser: "this is an HTML5 document" -->
+    <!-- lang="en" tells search engines this page is in English -->
+
+    <meta charset="UTF-8">
+    <!-- UTF-8 means your page can show any character, including symbols -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This makes your site look good on mobile phones too -->
+
+    <title>ShopEasy - Your Online Store</title>
+    <!-- This is what appears on the browser tab -->
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- This connects our CSS file so the page gets styled -->
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR — appears on every page -->
+    <nav class="navbar">
+        <div class="nav-brand">🛒 ShopEasy</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart <span class="cart-count">0</span></a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION — the big banner at the top -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to ShopEasy</h1>
+            <p>Find the best products at the best prices</p>
+            <a href="products.html" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="section">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid" id="featured-products">
+            <!-- These cards will later be filled automatically from the database -->
+            <!-- For now we write them manually so you can see how it looks -->
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product 1">
+                <h3>Wireless Headphones</h3>
+                <p class="price">$49.99</p>
+                <button class="btn-add" onclick="addToCart('Wireless Headphones', 49.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product 2">
+                <h3>Smart Watch</h3>
+                <p class="price">$89.99</p>
+                <button class="btn-add" onclick="addToCart('Smart Watch', 89.99)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product 3">
+                <h3>Running Shoes</h3>
+                <p class="price">$65.00</p>
+                <button class="btn-add" onclick="addToCart('Running Shoes', 65.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/200" alt="Product 4">
+                <h3>Backpack</h3>
+                <p class="price">$35.00</p>
+                <button class="btn-add" onclick="addToCart('Backpack', 35.00)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <!-- This connects our JavaScript file -->
+    <!-- We put it at the BOTTOM so the page loads before the script runs -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
